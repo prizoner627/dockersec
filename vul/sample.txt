@@ -1,0 +1,3579 @@
+{
+    "result": {
+        "CVE_Items": [
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "14.11.0",
+                                    "versionStartIncluding": "14.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "12.18.4",
+                                    "versionStartIncluding": "12.0.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve-assignments@hackerone.com",
+                        "ID": "CVE-2020-8201"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "Node.js < 12.18.4 and < 14.11 can be exploited to perform HTTP desync attacks and deliver malicious payloads to unsuspecting users. The payloads can be crafted by an attacker to hijack user sessions, poison cookies, perform clickjacking, and a multitude of other attacks depending on the architecture of the underlying system. The attack was possible due to a bug in processing of carrier-return symbols in the HTTP header names."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-444"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://hackerone.com/reports/922597",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Permissions Required"
+                                ],
+                                "url": "https://hackerone.com/reports/922597"
+                            },
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/september-2020-security-releases/",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/september-2020-security-releases/"
+                            },
+                            {
+                                "name": "openSUSE-SU-2020:1616",
+                                "refsource": "SUSE",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00011.html"
+                            },
+                            {
+                                "name": "https://security.netapp.com/advisory/ntap-20201009-0004/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.netapp.com/advisory/ntap-20201009-0004/"
+                            },
+                            {
+                                "name": "FEDORA-2020-43d5a372fc",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4OOYAMJVLLCLXDTHW3V5UXNULZBBK4O6/"
+                            },
+                            {
+                                "name": "GLSA-202101-07",
+                                "refsource": "GENTOO",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.gentoo.org/glsa/202101-07"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "MEDIUM",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 5.8,
+                            "confidentialityImpact": "PARTIAL",
+                            "integrityImpact": "PARTIAL",
+                            "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:N",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 8.6,
+                        "impactScore": 4.9,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "HIGH",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 7.4,
+                            "baseSeverity": "HIGH",
+                            "confidentialityImpact": "HIGH",
+                            "integrityImpact": "HIGH",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 2.2,
+                        "impactScore": 5.2
+                    }
+                },
+                "lastModifiedDate": "2022-05-24T17:24Z",
+                "publishedDate": "2020-09-18T21:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "14.9.0",
+                                    "versionStartIncluding": "14.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "12.18.4",
+                                    "versionStartIncluding": "12.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "10.22.1",
+                                    "versionStartIncluding": "10.0.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve-assignments@hackerone.com",
+                        "ID": "CVE-2020-8252"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "The implementation of realpath in libuv < 10.22.1, < 12.18.4, and < 14.9.0 used within Node.js incorrectly determined the buffer size which can result in a buffer overflow if the resolved path is longer than 256 bytes."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-120"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://hackerone.com/reports/965914",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Permissions Required",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://hackerone.com/reports/965914"
+                            },
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/september-2020-security-releases/",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/september-2020-security-releases/"
+                            },
+                            {
+                                "name": "GLSA-202009-15",
+                                "refsource": "GENTOO",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.gentoo.org/glsa/202009-15"
+                            },
+                            {
+                                "name": "USN-4548-1",
+                                "refsource": "UBUNTU",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://usn.ubuntu.com/4548-1/"
+                            },
+                            {
+                                "name": "openSUSE-SU-2020:1616",
+                                "refsource": "SUSE",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00011.html"
+                            },
+                            {
+                                "name": "https://security.netapp.com/advisory/ntap-20201009-0004/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.netapp.com/advisory/ntap-20201009-0004/"
+                            },
+                            {
+                                "name": "openSUSE-SU-2020:1660",
+                                "refsource": "SUSE",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00023.html"
+                            },
+                            {
+                                "name": "FEDORA-2020-43d5a372fc",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4OOYAMJVLLCLXDTHW3V5UXNULZBBK4O6/"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "LOW",
+                            "accessVector": "LOCAL",
+                            "authentication": "NONE",
+                            "availabilityImpact": "PARTIAL",
+                            "baseScore": 4.6,
+                            "confidentialityImpact": "PARTIAL",
+                            "integrityImpact": "PARTIAL",
+                            "vectorString": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 3.9,
+                        "impactScore": 6.4,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "LOW",
+                            "attackVector": "LOCAL",
+                            "availabilityImpact": "HIGH",
+                            "baseScore": 7.8,
+                            "baseSeverity": "HIGH",
+                            "confidentialityImpact": "HIGH",
+                            "integrityImpact": "HIGH",
+                            "privilegesRequired": "LOW",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 1.8,
+                        "impactScore": 5.9
+                    }
+                },
+                "lastModifiedDate": "2022-05-24T17:16Z",
+                "publishedDate": "2020-09-18T21:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "14.11.0",
+                                    "versionStartIncluding": "14.0.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve-assignments@hackerone.com",
+                        "ID": "CVE-2020-8251"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "Node.js < 14.11.0 is vulnerable to HTTP denial of service (DoS) attacks based on delayed requests submission which can make the server unable to accept new connections."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-400"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/september-2020-security-releases/",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/september-2020-security-releases/"
+                            },
+                            {
+                                "name": "https://hackerone.com/reports/868834",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Permissions Required"
+                                ],
+                                "url": "https://hackerone.com/reports/868834"
+                            },
+                            {
+                                "name": "https://security.netapp.com/advisory/ntap-20201009-0004/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.netapp.com/advisory/ntap-20201009-0004/"
+                            },
+                            {
+                                "name": "FEDORA-2020-43d5a372fc",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4OOYAMJVLLCLXDTHW3V5UXNULZBBK4O6/"
+                            },
+                            {
+                                "name": "GLSA-202101-07",
+                                "refsource": "GENTOO",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.gentoo.org/glsa/202101-07"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "LOW",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "PARTIAL",
+                            "baseScore": 5.0,
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "NONE",
+                            "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 10.0,
+                        "impactScore": 2.9,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "LOW",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "HIGH",
+                            "baseScore": 7.5,
+                            "baseSeverity": "HIGH",
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "NONE",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 3.9,
+                        "impactScore": 3.6
+                    }
+                },
+                "lastModifiedDate": "2022-05-24T16:54Z",
+                "publishedDate": "2020-09-18T21:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": []
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "report@snyk.io",
+                        "ID": "CVE-2022-24434"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "This affects all versions of package dicer. A malicious attacker can send a modified form to server, and crash the nodejs service. An attacker could sent the payload again and again so that the service continuously crashes."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": []
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "N/A",
+                                "refsource": "CONFIRM",
+                                "tags": [],
+                                "url": "https://snyk.io/vuln/SNYK-JS-DICER-2311764"
+                            },
+                            {
+                                "name": "N/A",
+                                "refsource": "CONFIRM",
+                                "tags": [],
+                                "url": "https://github.com/mscdex/dicer/pull/22/commits/b7fca2e93e8e9d4439d8acc5c02f5e54a0112dac"
+                            },
+                            {
+                                "name": "N/A",
+                                "refsource": "CONFIRM",
+                                "tags": [],
+                                "url": "https://github.com/mscdex/dicer/pull/22"
+                            },
+                            {
+                                "name": "N/A",
+                                "refsource": "CONFIRM",
+                                "tags": [],
+                                "url": "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2838865"
+                            },
+                            {
+                                "name": "N/A",
+                                "refsource": "CONFIRM",
+                                "tags": [],
+                                "url": "https://github.com/mscdex/busboy/issues/250"
+                            }
+                        ]
+                    }
+                },
+                "impact": {},
+                "lastModifiedDate": "2022-05-20T22:59Z",
+                "publishedDate": "2022-05-20T20:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": []
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "help@fluidattacks.com",
+                        "ID": "CVE-2022-25229"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "Popcorn Time 0.4.7 has a Stored XSS in the 'Movies API Server(s)' field via the 'settings' page. The 'nodeIntegration' configuration is set to on which allows the 'webpage' to use 'NodeJs' features, an attacker can leverage this to run OS commands."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": []
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://fluidattacks.com/advisories/bowie/",
+                                "refsource": "MISC",
+                                "tags": [],
+                                "url": "https://fluidattacks.com/advisories/bowie/"
+                            },
+                            {
+                                "name": "https://github.com/popcorn-official/popcorn-desktop/issues/2491",
+                                "refsource": "MISC",
+                                "tags": [],
+                                "url": "https://github.com/popcorn-official/popcorn-desktop/issues/2491"
+                            }
+                        ]
+                    }
+                },
+                "impact": {},
+                "lastModifiedDate": "2022-05-20T21:15Z",
+                "publishedDate": "2022-05-20T11:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": []
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "help@fluidattacks.com",
+                        "ID": "CVE-2022-25224"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "Proton v0.2.0 allows an attacker to create a malicious link inside a markdown file. When the victim clicks the link, the application opens the site in the current frame allowing an attacker to host JavaScript code in the malicious link in order to trigger an XSS attack. The 'nodeIntegration' configuration is set to on which allows the 'webpage' to use 'NodeJs' features, an attacker can leverage this to run OS commands."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": []
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://fluidattacks.com/advisories/lennon/",
+                                "refsource": "MISC",
+                                "tags": [],
+                                "url": "https://fluidattacks.com/advisories/lennon/"
+                            }
+                        ]
+                    }
+                },
+                "impact": {},
+                "lastModifiedDate": "2022-05-20T12:47Z",
+                "publishedDate": "2022-05-20T12:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "12.18.0",
+                                    "versionStartIncluding": "12.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "14.4.0",
+                                    "versionStartIncluding": "14.0.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:graalvm:19.3.2:*:*:*:enterprise:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:graalvm:20.1.0:*:*:*:enterprise:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:banking_extensibility_workbench:14.4.0:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:banking_extensibility_workbench:14.3.0:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:mysql_cluster:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndIncluding": "8.0.21",
+                                    "versionStartIncluding": "8.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:mysql_cluster:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndIncluding": "7.6.15",
+                                    "versionStartIncluding": "7.6.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:mysql_cluster:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndIncluding": "7.5.19",
+                                    "versionStartIncluding": "7.5.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:mysql_cluster:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndIncluding": "7.4.29",
+                                    "versionStartIncluding": "7.4.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:mysql_cluster:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndIncluding": "7.3.30",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:blockchain_platform:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "21.1.2",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve-assignments@hackerone.com",
+                        "ID": "CVE-2020-8172"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "TLS session reuse can lead to host certificate verification bypass in node version < 12.18.0 and < 14.4.0."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-295"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://hackerone.com/reports/811502",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Exploit",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://hackerone.com/reports/811502"
+                            },
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/june-2020-security-releases/",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/june-2020-security-releases/"
+                            },
+                            {
+                                "name": "https://security.netapp.com/advisory/ntap-20200625-0002/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.netapp.com/advisory/ntap-20200625-0002/"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpujul2020.html",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com/security-alerts/cpujul2020.html"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com/security-alerts/cpuoct2020.html"
+                            },
+                            {
+                                "name": "GLSA-202101-07",
+                                "refsource": "GENTOO",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.gentoo.org/glsa/202101-07"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com/security-alerts/cpujan2021.html"
+                            },
+                            {
+                                "name": "N/A",
+                                "refsource": "N/A",
+                                "tags": [
+                                    "Not Applicable",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com//security-alerts/cpujul2021.html"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpuapr2022.html",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com/security-alerts/cpuapr2022.html"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "MEDIUM",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 5.8,
+                            "confidentialityImpact": "PARTIAL",
+                            "integrityImpact": "PARTIAL",
+                            "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:N",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 8.6,
+                        "impactScore": 4.9,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "HIGH",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 7.4,
+                            "baseSeverity": "HIGH",
+                            "confidentialityImpact": "HIGH",
+                            "integrityImpact": "HIGH",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 2.2,
+                        "impactScore": 5.2
+                    }
+                },
+                "lastModifiedDate": "2022-05-12T15:01Z",
+                "publishedDate": "2020-06-08T14:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:tmpl_project:tmpl:*:*:*:*:*:node.js:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "1.0.5",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "security@huntr.dev",
+                        "ID": "CVE-2021-3777"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "nodejs-tmpl is vulnerable to Inefficient Regular Expression Complexity"
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-400"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://huntr.dev/bounties/a07b547a-f457-41c9-9d89-ee48bee8a4df",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Exploit",
+                                    "Issue Tracking",
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://huntr.dev/bounties/a07b547a-f457-41c9-9d89-ee48bee8a4df"
+                            },
+                            {
+                                "name": "https://github.com/daaku/nodejs-tmpl/commit/4c654e4d1542f329ed561fd95ccd80f30c6872d6",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://github.com/daaku/nodejs-tmpl/commit/4c654e4d1542f329ed561fd95ccd80f30c6872d6"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "LOW",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "COMPLETE",
+                            "baseScore": 7.8,
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "NONE",
+                            "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:C",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 10.0,
+                        "impactScore": 6.9,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "HIGH",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "LOW",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "HIGH",
+                            "baseScore": 7.5,
+                            "baseSeverity": "HIGH",
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "NONE",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 3.9,
+                        "impactScore": 3.6
+                    }
+                },
+                "lastModifiedDate": "2022-05-12T01:02Z",
+                "publishedDate": "2021-09-15T08:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodered:node-red:*:*:*:*:*:node.js:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "1.2.8",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "security-advisories@github.com",
+                        "ID": "CVE-2021-21297"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "Node-Red is a low-code programming for event-driven applications built using nodejs. Node-RED 1.2.7 and earlier contains a Prototype Pollution vulnerability in the admin API. A badly formed request can modify the prototype of the default JavaScript Object with the potential to affect the default behaviour of the Node-RED runtime. The vulnerability is patched in the 1.2.8 release. A workaround is to ensure only authorized users are able to access the editor url."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-915"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://github.com/node-red/node-red/security/advisories/GHSA-xp9c-82x8-7f67",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://github.com/node-red/node-red/security/advisories/GHSA-xp9c-82x8-7f67"
+                            },
+                            {
+                                "name": "https://www.npmjs.com/package/@node-red/runtime",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Release Notes",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.npmjs.com/package/@node-red/runtime"
+                            },
+                            {
+                                "name": "https://www.npmjs.com/package/@node-red/editor-api",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Release Notes",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.npmjs.com/package/@node-red/editor-api"
+                            },
+                            {
+                                "name": "https://github.com/node-red/node-red/releases/tag/1.2.8",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Release Notes",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://github.com/node-red/node-red/releases/tag/1.2.8"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "LOW",
+                            "accessVector": "NETWORK",
+                            "authentication": "SINGLE",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 4.0,
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "PARTIAL",
+                            "vectorString": "AV:N/AC:L/Au:S/C:N/I:P/A:N",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 8.0,
+                        "impactScore": 2.9,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "LOW",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 6.5,
+                            "baseSeverity": "MEDIUM",
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "HIGH",
+                            "privilegesRequired": "LOW",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 2.8,
+                        "impactScore": 3.6
+                    }
+                },
+                "lastModifiedDate": "2022-05-12T00:59Z",
+                "publishedDate": "2021-02-26T17:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "15.2.1",
+                                    "versionStartIncluding": "15.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "14.15.1",
+                                    "versionStartIncluding": "14.13.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "12.19.1",
+                                    "versionStartIncluding": "12.16.3",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:graalvm:19.3.4:*:*:*:enterprise:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:graalvm:20.3.0:*:*:*:enterprise:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:retail_xstore_point_of_service:16.0.6:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:retail_xstore_point_of_service:17.0.4:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:retail_xstore_point_of_service:18.0.3:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:retail_xstore_point_of_service:19.0.2:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:jd_edwards_enterpriseone_tools:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "9.2.6.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:mysql_cluster:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndIncluding": "8.0.23",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:blockchain_platform:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "21.1.2",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:c-ares_project:c-ares:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "1.16.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve-assignments@hackerone.com",
+                        "ID": "CVE-2020-8277"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "A Node.js application that allows an attacker to trigger a DNS request for a host of their choice could trigger a Denial of Service in versions < 15.2.1, < 14.15.1, and < 12.19.1 by getting the application to resolve a DNS record with a larger number of responses. This is fixed in 15.2.1, 14.15.1, and 12.19.1."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-400"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/november-2020-security-releases/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Patch",
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/november-2020-security-releases/"
+                            },
+                            {
+                                "name": "https://hackerone.com/reports/1033107",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Permissions Required",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://hackerone.com/reports/1033107"
+                            },
+                            {
+                                "name": "FEDORA-2020-7473744de1",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/A7WH7W46OZSEUHWBHD7TCH3LRFY52V6Z/"
+                            },
+                            {
+                                "name": "FEDORA-2020-307e873389",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BEJBY3RJB3XWUOJFGZM5E3EMQ7MFM3UT/"
+                            },
+                            {
+                                "name": "GLSA-202012-11",
+                                "refsource": "GENTOO",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.gentoo.org/glsa/202012-11"
+                            },
+                            {
+                                "name": "GLSA-202101-07",
+                                "refsource": "GENTOO",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.gentoo.org/glsa/202101-07"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com/security-alerts/cpujan2021.html"
+                            },
+                            {
+                                "name": "FEDORA-2021-ee913722db",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EEIV4CH6KNVZK63Y6EKVN2XDW7IHSJBJ/"
+                            },
+                            {
+                                "name": "FEDORA-2021-afed2b904e",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VXLJY4764LYVJPC7NCDLE2UMQ3QC5OI2/"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpuApr2021.html",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com/security-alerts/cpuApr2021.html"
+                            },
+                            {
+                                "name": "N/A",
+                                "refsource": "N/A",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com//security-alerts/cpujul2021.html"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpuoct2021.html",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com/security-alerts/cpuoct2021.html"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpuapr2022.html",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com/security-alerts/cpuapr2022.html"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "LOW",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "PARTIAL",
+                            "baseScore": 5.0,
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "NONE",
+                            "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 10.0,
+                        "impactScore": 2.9,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "LOW",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "HIGH",
+                            "baseScore": 7.5,
+                            "baseSeverity": "HIGH",
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "NONE",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 3.9,
+                        "impactScore": 3.6
+                    }
+                },
+                "lastModifiedDate": "2022-05-10T15:25Z",
+                "publishedDate": "2020-11-19T01:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "17.3.1",
+                                    "versionStartIncluding": "17.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "12.22.9",
+                                    "versionStartIncluding": "12.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "14.18.3",
+                                    "versionStartIncluding": "14.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "16.13.2",
+                                    "versionStartIncluding": "16.0.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve-assignments@hackerone.com",
+                        "ID": "CVE-2022-21824"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "Due to the formatting logic of the \"console.table()\" function it was not safe to allow user controlled input to be passed to the \"properties\" parameter while simultaneously passing a plain object with at least one property as the first parameter, which could be \"__proto__\". The prototype pollution has very limited control, in that it only allows an empty string to be assigned to numerical keys of the object prototype.Node.js >= 12.22.9, >= 14.18.3, >= 16.13.2, and >= 17.3.1 use a null protoype for the object these properties are being assigned to."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-1321"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://hackerone.com/reports/1431042",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Issue Tracking",
+                                    "Mitigation",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://hackerone.com/reports/1431042"
+                            },
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Release Notes",
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/"
+                            },
+                            {
+                                "name": "https://security.netapp.com/advisory/ntap-20220325-0007/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.netapp.com/advisory/ntap-20220325-0007/"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpuapr2022.html",
+                                "refsource": "MISC",
+                                "tags": [],
+                                "url": "https://www.oracle.com/security-alerts/cpuapr2022.html"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "LOW",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "PARTIAL",
+                            "baseScore": 6.4,
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "PARTIAL",
+                            "vectorString": "AV:N/AC:L/Au:N/C:N/I:P/A:P",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 10.0,
+                        "impactScore": 4.9,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "LOW",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "HIGH",
+                            "baseScore": 8.2,
+                            "baseSeverity": "HIGH",
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "LOW",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 3.9,
+                        "impactScore": 4.2
+                    }
+                },
+                "lastModifiedDate": "2022-04-20T00:16Z",
+                "publishedDate": "2022-02-24T19:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "17.3.1",
+                                    "versionStartIncluding": "17.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "16.13.2",
+                                    "versionStartIncluding": "16.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "14.18.3",
+                                    "versionStartIncluding": "14.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "12.22.9",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve-assignments@hackerone.com",
+                        "ID": "CVE-2021-44533"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "Node.js < 12.22.9, < 14.18.3, < 16.13.2, and < 17.3.1 did not handle multi-value Relative Distinguished Names correctly. Attackers could craft certificate subjects containing a single-value Relative Distinguished Name that would be interpreted as a multi-value Relative Distinguished Name, for example, in order to inject a Common Name that would allow bypassing the certificate subject verification.Affected versions of Node.js that do not accept multi-value Relative Distinguished Names and are thus not vulnerable to such attacks themselves. However, third-party code that uses node's ambiguous presentation of certificate subjects may be vulnerable."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-295"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://hackerone.com/reports/1429694",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Exploit",
+                                    "Mitigation",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://hackerone.com/reports/1429694"
+                            },
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Release Notes",
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/"
+                            },
+                            {
+                                "name": "https://security.netapp.com/advisory/ntap-20220325-0007/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.netapp.com/advisory/ntap-20220325-0007/"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpuapr2022.html",
+                                "refsource": "MISC",
+                                "tags": [],
+                                "url": "https://www.oracle.com/security-alerts/cpuapr2022.html"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "LOW",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 5.0,
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "PARTIAL",
+                            "vectorString": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 10.0,
+                        "impactScore": 2.9,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "LOW",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 5.3,
+                            "baseSeverity": "MEDIUM",
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "LOW",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 3.9,
+                        "impactScore": 1.4
+                    }
+                },
+                "lastModifiedDate": "2022-04-20T00:16Z",
+                "publishedDate": "2022-02-24T19:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "17.3.1",
+                                    "versionStartIncluding": "17.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "16.13.2",
+                                    "versionStartIncluding": "16.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "14.18.3",
+                                    "versionStartIncluding": "14.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "12.22.9",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve-assignments@hackerone.com",
+                        "ID": "CVE-2021-44532"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "Node.js < 12.22.9, < 14.18.3, < 16.13.2, and < 17.3.1 converts SANs (Subject Alternative Names) to a string format. It uses this string to check peer certificates against hostnames when validating connections. The string format was subject to an injection vulnerability when name constraints were used within a certificate chain, allowing the bypass of these name constraints.Versions of Node.js with the fix for this escape SANs containing the problematic characters in order to prevent the injection. This behavior can be reverted through the --security-revert command-line option."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-295"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://hackerone.com/reports/1429694",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Mitigation",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://hackerone.com/reports/1429694"
+                            },
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Exploit",
+                                    "Release Notes",
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/"
+                            },
+                            {
+                                "name": "https://security.netapp.com/advisory/ntap-20220325-0007/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.netapp.com/advisory/ntap-20220325-0007/"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpuapr2022.html",
+                                "refsource": "MISC",
+                                "tags": [],
+                                "url": "https://www.oracle.com/security-alerts/cpuapr2022.html"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "LOW",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 5.0,
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "PARTIAL",
+                            "vectorString": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 10.0,
+                        "impactScore": 2.9,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "LOW",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 5.3,
+                            "baseSeverity": "MEDIUM",
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "LOW",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 3.9,
+                        "impactScore": 1.4
+                    }
+                },
+                "lastModifiedDate": "2022-04-20T00:16Z",
+                "publishedDate": "2022-02-24T19:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "17.3.1",
+                                    "versionStartIncluding": "17.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "16.13.2",
+                                    "versionStartIncluding": "16.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "14.18.3",
+                                    "versionStartIncluding": "14.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "12.22.9",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve-assignments@hackerone.com",
+                        "ID": "CVE-2021-44531"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "Accepting arbitrary Subject Alternative Name (SAN) types, unless a PKI is specifically defined to use a particular SAN type, can result in bypassing name-constrained intermediates. Node.js < 12.22.9, < 14.18.3, < 16.13.2, and < 17.3.1 was accepting URI SAN types, which PKIs are often not defined to use. Additionally, when a protocol allows URI SANs, Node.js did not match the URI correctly.Versions of Node.js with the fix for this disable the URI SAN type when checking a certificate against a hostname. This behavior can be reverted through the --security-revert command-line option."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-295"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://hackerone.com/reports/1429694",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Issue Tracking",
+                                    "Mitigation",
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://hackerone.com/reports/1429694"
+                            },
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Release Notes",
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/"
+                            },
+                            {
+                                "name": "https://security.netapp.com/advisory/ntap-20220325-0007/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.netapp.com/advisory/ntap-20220325-0007/"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpuapr2022.html",
+                                "refsource": "MISC",
+                                "tags": [],
+                                "url": "https://www.oracle.com/security-alerts/cpuapr2022.html"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "MEDIUM",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 5.8,
+                            "confidentialityImpact": "PARTIAL",
+                            "integrityImpact": "PARTIAL",
+                            "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:N",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 8.6,
+                        "impactScore": 4.9,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "HIGH",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 7.4,
+                            "baseSeverity": "HIGH",
+                            "confidentialityImpact": "HIGH",
+                            "integrityImpact": "HIGH",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 2.2,
+                        "impactScore": 5.2
+                    }
+                },
+                "lastModifiedDate": "2022-04-20T00:16Z",
+                "publishedDate": "2022-02-24T19:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nghttp2:nghttp2:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndIncluding": "1.31.0",
+                                    "versionStartIncluding": "1.10.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndIncluding": "9.11.2",
+                                    "versionStartIncluding": "9.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndIncluding": "10.15.2",
+                                    "versionStartIncluding": "10.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndIncluding": "8.15.1",
+                                    "versionStartIncluding": "8.4.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve@mitre.org",
+                        "ID": "CVE-2018-1000168"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "nghttp2 version >= 1.10.0 and nghttp2 <= v1.31.0 contains an Improper Input Validation CWE-20 vulnerability in ALTSVC frame handling that can result in segmentation fault leading to denial of service. This attack appears to be exploitable via network client. This vulnerability appears to have been fixed in >= 1.31.1."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-20"
+                                    },
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-476"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://nghttp2.org/blog/2018/04/12/nghttp2-v1-31-1/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nghttp2.org/blog/2018/04/12/nghttp2-v1-31-1/"
+                            },
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/june-2018-security-releases/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Release Notes",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/june-2018-security-releases/"
+                            },
+                            {
+                                "name": "103952",
+                                "refsource": "BID",
+                                "tags": [
+                                    "Broken Link"
+                                ],
+                                "url": "http://www.securityfocus.com/bid/103952"
+                            },
+                            {
+                                "name": "RHSA-2019:0367",
+                                "refsource": "REDHAT",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://access.redhat.com/errata/RHSA-2019:0367"
+                            },
+                            {
+                                "name": "RHSA-2019:0366",
+                                "refsource": "REDHAT",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://access.redhat.com/errata/RHSA-2019:0366"
+                            },
+                            {
+                                "name": "[debian-lts-announce] 20211017 [SECURITY] [DLA 2786-1] nghttp2 security update",
+                                "refsource": "MLIST",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.debian.org/debian-lts-announce/2021/10/msg00011.html"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "LOW",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "PARTIAL",
+                            "baseScore": 5.0,
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "NONE",
+                            "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 10.0,
+                        "impactScore": 2.9,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "LOW",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "HIGH",
+                            "baseScore": 7.5,
+                            "baseSeverity": "HIGH",
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "NONE",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 3.9,
+                        "impactScore": 3.6
+                    }
+                },
+                "lastModifiedDate": "2022-04-13T16:17Z",
+                "publishedDate": "2018-05-08T15:29Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "15.10.0",
+                                    "versionStartIncluding": "15.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "14.16.0",
+                                    "versionStartIncluding": "14.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "12.21.0",
+                                    "versionStartIncluding": "12.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "10.24.0",
+                                    "versionStartIncluding": "10.0.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:netapp:e-series_performance_analyzer:-:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.58:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:graalvm:20.3.1.2:*:*:*:enterprise:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:graalvm:21.0.0.2:*:*:*:enterprise:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:graalvm:19.3.5:*:*:*:enterprise:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:nosql_database:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "20.3",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:mysql_cluster:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndIncluding": "8.0.25",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.59:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:jd_edwards_enterpriseone_tools:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "9.2.6.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:siemens:sinec_infrastructure_network_services:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "1.0.1.1",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve-assignments@hackerone.com",
+                        "ID": "CVE-2021-22883"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "Node.js before 10.24.0, 12.21.0, 14.16.0, and 15.10.0 is vulnerable to a denial of service attack when too many connection attempts with an 'unknownProtocol' are established. This leads to a leak of file descriptors. If a file descriptor limit is configured on the system, then the server is unable to accept new connections and prevent the process also from opening, e.g. a file. If no file descriptor limit is configured, then this lead to an excessive memory usage and cause the system to run out of memory."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-400"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://hackerone.com/reports/1043360",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Permissions Required",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://hackerone.com/reports/1043360"
+                            },
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Release Notes",
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/"
+                            },
+                            {
+                                "name": "FEDORA-2021-f6bd75e9d4",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/F45Y7TXSU33MTKB6AGL2Q5V5ZOCNPKOG/"
+                            },
+                            {
+                                "name": "FEDORA-2021-a760169c3c",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/E4FRS5ZVK4ZQ7XIJQNGIKUXG2DJFHLO7/"
+                            },
+                            {
+                                "name": "FEDORA-2021-6aaba80ba2",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HSYFUGKFUSZ27M5TEZ3FKILWTWFJTFAZ/"
+                            },
+                            {
+                                "name": "https://security.netapp.com/advisory/ntap-20210416-0001/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.netapp.com/advisory/ntap-20210416-0001/"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpuApr2021.html",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com/security-alerts/cpuApr2021.html"
+                            },
+                            {
+                                "name": "N/A",
+                                "refsource": "N/A",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com//security-alerts/cpujul2021.html"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpuoct2021.html",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com/security-alerts/cpuoct2021.html"
+                            },
+                            {
+                                "name": "https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "LOW",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "COMPLETE",
+                            "baseScore": 7.8,
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "NONE",
+                            "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:C",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 10.0,
+                        "impactScore": 6.9,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "HIGH",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "LOW",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "HIGH",
+                            "baseScore": 7.5,
+                            "baseSeverity": "HIGH",
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "NONE",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 3.9,
+                        "impactScore": 3.6
+                    }
+                },
+                "lastModifiedDate": "2022-04-06T16:28Z",
+                "publishedDate": "2021-03-03T18:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "15.5.1",
+                                    "versionStartIncluding": "15.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "14.15.4",
+                                    "versionStartIncluding": "14.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "12.20.1",
+                                    "versionStartIncluding": "12.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "10.23.1",
+                                    "versionStartIncluding": "10.0.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:graalvm:19.3.4:*:*:*:enterprise:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:graalvm:20.3.0:*:*:*:enterprise:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:siemens:sinec_infrastructure_network_services:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "1.0.1.1",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve-assignments@hackerone.com",
+                        "ID": "CVE-2020-8287"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "Node.js versions before 10.23.1, 12.20.1, 14.15.4, 15.5.1 allow two copies of a header field in an HTTP request (for example, two Transfer-Encoding header fields). In this case, Node.js identifies the first header field and ignores the second. This can lead to HTTP Request Smuggling."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-444"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://hackerone.com/reports/1002188",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Exploit",
+                                    "Issue Tracking",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://hackerone.com/reports/1002188"
+                            },
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/january-2021-security-releases/",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/january-2021-security-releases/"
+                            },
+                            {
+                                "name": "DSA-4826",
+                                "refsource": "DEBIAN",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.debian.org/security/2021/dsa-4826"
+                            },
+                            {
+                                "name": "FEDORA-2021-fb1a136393",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/K4I6MZNC7C7VIDQR267OL4TVCI3ZKAC4/"
+                            },
+                            {
+                                "name": "GLSA-202101-07",
+                                "refsource": "GENTOO",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.gentoo.org/glsa/202101-07"
+                            },
+                            {
+                                "name": "FEDORA-2021-d5b2c18fe6",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/H472D5HPXN6RRXCNFML3BK5OYC52CXF2/"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com/security-alerts/cpujan2021.html"
+                            },
+                            {
+                                "name": "https://security.netapp.com/advisory/ntap-20210212-0003/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.netapp.com/advisory/ntap-20210212-0003/"
+                            },
+                            {
+                                "name": "https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "LOW",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 6.4,
+                            "confidentialityImpact": "PARTIAL",
+                            "integrityImpact": "PARTIAL",
+                            "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:N",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 10.0,
+                        "impactScore": 4.9,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "LOW",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 6.5,
+                            "baseSeverity": "MEDIUM",
+                            "confidentialityImpact": "LOW",
+                            "integrityImpact": "LOW",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 3.9,
+                        "impactScore": 2.5
+                    }
+                },
+                "lastModifiedDate": "2022-04-06T16:27Z",
+                "publishedDate": "2021-01-06T21:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "15.5.1",
+                                    "versionStartIncluding": "15.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "14.15.4",
+                                    "versionStartIncluding": "14.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "12.20.1",
+                                    "versionStartIncluding": "12.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "10.23.1",
+                                    "versionStartIncluding": "10.0.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:graalvm:19.3.4:*:*:*:enterprise:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:graalvm:20.3.0:*:*:*:enterprise:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:siemens:sinec_infrastructure_network_services:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "1.0.1.1",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve-assignments@hackerone.com",
+                        "ID": "CVE-2020-8265"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "Node.js versions before 10.23.1, 12.20.1, 14.15.4, 15.5.1 are vulnerable to a use-after-free bug in its TLS implementation. When writing to a TLS enabled socket, node::StreamBase::Write calls node::TLSWrap::DoWrite with a freshly allocated WriteWrap object as first argument. If the DoWrite method does not return an error, this object is passed back to the caller as part of a StreamWriteResult structure. This may be exploited to corrupt memory leading to a Denial of Service or potentially other exploits."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-416"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/january-2021-security-releases/",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/january-2021-security-releases/"
+                            },
+                            {
+                                "name": "https://hackerone.com/reports/988103",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Exploit",
+                                    "Issue Tracking",
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://hackerone.com/reports/988103"
+                            },
+                            {
+                                "name": "DSA-4826",
+                                "refsource": "DEBIAN",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.debian.org/security/2021/dsa-4826"
+                            },
+                            {
+                                "name": "FEDORA-2021-fb1a136393",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/K4I6MZNC7C7VIDQR267OL4TVCI3ZKAC4/"
+                            },
+                            {
+                                "name": "GLSA-202101-07",
+                                "refsource": "GENTOO",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.gentoo.org/glsa/202101-07"
+                            },
+                            {
+                                "name": "FEDORA-2021-d5b2c18fe6",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/H472D5HPXN6RRXCNFML3BK5OYC52CXF2/"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com/security-alerts/cpujan2021.html"
+                            },
+                            {
+                                "name": "https://security.netapp.com/advisory/ntap-20210212-0003/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.netapp.com/advisory/ntap-20210212-0003/"
+                            },
+                            {
+                                "name": "https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "MEDIUM",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "PARTIAL",
+                            "baseScore": 6.8,
+                            "confidentialityImpact": "PARTIAL",
+                            "integrityImpact": "PARTIAL",
+                            "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 8.6,
+                        "impactScore": 6.4,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "HIGH",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "HIGH",
+                            "baseScore": 8.1,
+                            "baseSeverity": "HIGH",
+                            "confidentialityImpact": "HIGH",
+                            "integrityImpact": "HIGH",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 2.2,
+                        "impactScore": 5.9
+                    }
+                },
+                "lastModifiedDate": "2022-04-06T16:26Z",
+                "publishedDate": "2021-01-06T21:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "15.10.0",
+                                    "versionStartIncluding": "15.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "14.16.0",
+                                    "versionStartIncluding": "14.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "12.21.0",
+                                    "versionStartIncluding": "12.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "10.24.0",
+                                    "versionStartIncluding": "10.0.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:netapp:snapcenter:-:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:netapp:oncommand_workflow_automation:-:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:netapp:oncommand_insight:-:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:netapp:active_iq_unified_manager:-:*:*:*:*:vmware_vsphere:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:netapp:e-series_performance_analyzer:-:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:netapp:active_iq_unified_manager:-:*:*:*:*:windows:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.58:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:graalvm:20.3.1.2:*:*:*:enterprise:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:graalvm:21.0.0.2:*:*:*:enterprise:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:graalvm:19.3.5:*:*:*:enterprise:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:nosql_database:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "20.3",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:mysql_cluster:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndIncluding": "8.0.25",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.59:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:oracle:jd_edwards_enterpriseone_tools:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "9.2.6.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:siemens:sinec_infrastructure_network_services:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "1.0.1.1",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve-assignments@hackerone.com",
+                        "ID": "CVE-2021-22884"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "Node.js before 10.24.0, 12.21.0, 14.16.0, and 15.10.0 is vulnerable to DNS rebinding attacks as the whitelist includes \u201clocalhost6\u201d. When \u201clocalhost6\u201d is not present in /etc/hosts, it is just an ordinary domain that is resolved via DNS, i.e., over network. If the attacker controls the victim's DNS server or can spoof its responses, the DNS rebinding protection can be bypassed by using the \u201clocalhost6\u201d domain. As long as the attacker uses the \u201clocalhost6\u201d domain, they can still apply the attack described in CVE-2018-7160."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "NVD-CWE-Other"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/march-2018-security-releases/#node-js-inspector-dns-rebinding-vulnerability-cve-2018-7160",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Release Notes",
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/march-2018-security-releases/#node-js-inspector-dns-rebinding-vulnerability-cve-2018-7160"
+                            },
+                            {
+                                "name": "https://hackerone.com/reports/1069487",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Exploit",
+                                    "Issue Tracking",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://hackerone.com/reports/1069487"
+                            },
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Release Notes",
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/"
+                            },
+                            {
+                                "name": "FEDORA-2021-f6bd75e9d4",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/F45Y7TXSU33MTKB6AGL2Q5V5ZOCNPKOG/"
+                            },
+                            {
+                                "name": "FEDORA-2021-a760169c3c",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/E4FRS5ZVK4ZQ7XIJQNGIKUXG2DJFHLO7/"
+                            },
+                            {
+                                "name": "FEDORA-2021-6aaba80ba2",
+                                "refsource": "FEDORA",
+                                "tags": [
+                                    "Mailing List",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HSYFUGKFUSZ27M5TEZ3FKILWTWFJTFAZ/"
+                            },
+                            {
+                                "name": "https://security.netapp.com/advisory/ntap-20210416-0001/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.netapp.com/advisory/ntap-20210416-0001/"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpuApr2021.html",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com/security-alerts/cpuApr2021.html"
+                            },
+                            {
+                                "name": "N/A",
+                                "refsource": "N/A",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com//security-alerts/cpujul2021.html"
+                            },
+                            {
+                                "name": "https://security.netapp.com/advisory/ntap-20210723-0001/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.netapp.com/advisory/ntap-20210723-0001/"
+                            },
+                            {
+                                "name": "https://www.oracle.com/security-alerts/cpuoct2021.html",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://www.oracle.com/security-alerts/cpuoct2021.html"
+                            },
+                            {
+                                "name": "https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "HIGH",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "PARTIAL",
+                            "baseScore": 5.1,
+                            "confidentialityImpact": "PARTIAL",
+                            "integrityImpact": "PARTIAL",
+                            "vectorString": "AV:N/AC:H/Au:N/C:P/I:P/A:P",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 4.9,
+                        "impactScore": 6.4,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": true
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "HIGH",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "HIGH",
+                            "baseScore": 7.5,
+                            "baseSeverity": "HIGH",
+                            "confidentialityImpact": "HIGH",
+                            "integrityImpact": "HIGH",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "REQUIRED",
+                            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 1.6,
+                        "impactScore": 5.9
+                    }
+                },
+                "lastModifiedDate": "2022-04-06T16:24Z",
+                "publishedDate": "2021-03-03T18:15Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "16.4.1",
+                                    "versionStartIncluding": "16.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "14.17.2",
+                                    "versionStartIncluding": "14.0.0",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "12.22.2",
+                                    "versionStartIncluding": "12.0.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        },
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:siemens:sinec_infrastructure_network_services:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndExcluding": "1.0.1.1",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve-assignments@hackerone.com",
+                        "ID": "CVE-2021-22918"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "Node.js before 16.4.1, 14.17.2, 12.22.2 is vulnerable to an out-of-bounds read when uv__idna_toascii() is used to convert strings to ASCII. The pointer p is read and increased without checking whether it is beyond pe, with the latter holding a pointer to the end of the buffer. This can lead to information disclosures or crashes. This function can be triggered via uv_getaddrinfo()."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-125"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://nodejs.org/en/blog/vulnerability/july-2021-security-releases/",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Patch",
+                                    "Vendor Advisory"
+                                ],
+                                "url": "https://nodejs.org/en/blog/vulnerability/july-2021-security-releases/"
+                            },
+                            {
+                                "name": "https://hackerone.com/reports/1209681",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Exploit",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://hackerone.com/reports/1209681"
+                            },
+                            {
+                                "name": "https://security.netapp.com/advisory/ntap-20210805-0003/",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://security.netapp.com/advisory/ntap-20210805-0003/"
+                            },
+                            {
+                                "name": "https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Patch",
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "acInsufInfo": false,
+                        "cvssV2": {
+                            "accessComplexity": "LOW",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 5.0,
+                            "confidentialityImpact": "PARTIAL",
+                            "integrityImpact": "NONE",
+                            "vectorString": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 10.0,
+                        "impactScore": 2.9,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "LOW",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 5.3,
+                            "baseSeverity": "MEDIUM",
+                            "confidentialityImpact": "LOW",
+                            "integrityImpact": "NONE",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+                            "version": "3.1"
+                        },
+                        "exploitabilityScore": 3.9,
+                        "impactScore": 1.4
+                    }
+                },
+                "lastModifiedDate": "2022-04-06T15:01Z",
+                "publishedDate": "2021-07-12T11:15Z"
+            }
+        ],
+        "CVE_data_format": "MITRE",
+        "CVE_data_timestamp": "2022-05-29T14:39Z",
+        "CVE_data_type": "CVE",
+        "CVE_data_version": "4.0"
+    },
+    "resultsPerPage": 20,
+    "startIndex": 0,
+    "totalResults": 109
+}

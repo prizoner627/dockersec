@@ -1,0 +1,8 @@
+{
+    "result": {
+        "CVE_Items": []
+    },
+    "resultsPerPage": 0,
+    "startIndex": 0,
+    "totalResults": 0
+}
