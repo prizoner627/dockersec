@@ -8,8 +8,11 @@ from subprocess import call
 
 def check():
     #cleaning files
-    os.remove("./output.log.json")
-    os.remove("./output.log")
+    if os.path.exists("./output.log.json"):
+        os.remove("./output.log.json")
+    if os.path.exists("./output.log"):
+        os.remove("./output.log")
+
     rc = call("./main.sh", shell=True)
             
 
