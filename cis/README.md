@@ -32,6 +32,7 @@ code blocks for commands
 ```
 pip install pipreqs
 pipreqs /path/to/project
+pipreqs . --force
 ```
 
 ## Help
