@@ -182,27 +182,37 @@ def finish(scanId):
 
 @click.command()							
 @click.argument('mode', type=str)
+@click.option('--scantype', type=str, help='Please mention scan type (host/container)')
 @click.option('--outfile', type=str, default="sample.txt", help='Output file name')
 @click.option('--dockerfile', type=str, default="./samples/Dockerfile", help='Dockerfile location')
 @click.option('--composefile', type=str, default="./samples/docker-compose3.yml", help='Docker-compose location')
 
-def main(mode, outfile,dockerfile,composefile):
+def main(mode,scantype, outfile,dockerfile,composefile):
     print(f"{Fore.GREEN}\n# DockySec v1.0 \n{Style.RESET_ALL}")
 
-    scanId = uuid.uuid4()
-    print(f"{Fore.RED}[IMPORTANT] Please remember this scan id to run container specific scans {scanId}{Style.RESET_ALL}")
-    
-    print(f"{Fore.YELLOW}[DEBUG] Cleaning previous scans \n{Style.RESET_ALL}")
-    if os.path.exists("./results/output.log.json"):
-        os.remove("results/output.log.json")
-    if os.path.exists("results/output.log"):
-        os.remove("results/output.log")
+    if mode == 'scan':
+        if scantype == "host":
+            scanId = uuid.uuid4()
+            print(f"{Fore.RED}[IMPORTANT] Please remember this scan id to run container specific scans {scanId}{Style.RESET_ALL}")
+            
+            print(f"{Fore.YELLOW}[DEBUG] Cleaning previous scans \n{Style.RESET_ALL}")
+            if os.path.exists("./results/output.log.json"):
+                os.remove("results/output.log.json")
+            if os.path.exists("results/output.log"):
+                os.remove("results/output.log")
 
-    cis_check()
-    host_scan()
-    scanDockerFile(dockerfile)
-    scanComposeFile(composefile)
-    finish(scanId)
+            cis_check()
+            host_scan()
+            scanDockerFile(dockerfile)
+            scanComposeFile(composefile)
+            finish(scanId)
+        if scantype == "container":
+            print("container")    
+        if not scantype:
+            print(f"{Fore.RED}[ERROR] Please define scantype{Style.RESET_ALL}")
+
+    if mode == 'fix':
+        print("fix")    
 
 if __name__ == '__main__':
     main()
