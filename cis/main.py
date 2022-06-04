@@ -4,8 +4,9 @@ import click
 import json
 import os
 import nmap
+from shutil import which
 from pprint import pprint
-from subprocess import call
+from subprocess import call, DEVNULL
 from bs4 import BeautifulSoup
 from dockerfile_parse import DockerfileParser
 import subprocess
@@ -180,6 +181,14 @@ def finish(scanId):
         else:
             print(f"{Fore.YELLOW}[DEBUG] Something went wrong, please try again{Style.RESET_ALL}")
 
+def container_scan():
+    print(f"{Fore.GREEN}\n# --------------------------------------------------------------------------------------------{Style.RESET_ALL}")
+    print(f"{Fore.GREEN}# Starting Container Scan{Style.RESET_ALL}")
+    print(f"{Fore.GREEN}# Checks for container security.{Style.RESET_ALL}")
+    print(f"{Fore.GREEN}# --------------------------------------------------------------------------------------------{Style.RESET_ALL}")
+    
+
+
 @click.command()							
 @click.argument('mode', type=str)
 @click.option('--scantype', type=str, help='Please mention scan type (host/container)')
@@ -189,6 +198,11 @@ def finish(scanId):
 
 def main(mode,scantype, outfile,dockerfile,composefile):
     print(f"{Fore.GREEN}\n# DockySec v1.0 \n{Style.RESET_ALL}")
+
+    if which("nmap") is None:
+        print(f"{Fore.RED}[IMPORTANT] Nmap is not installed{Style.RESET_ALL}")
+        print(f"{Fore.YELLOW}[DEBUG] Installing nmap \n{Style.RESET_ALL}")
+        call('sudo apt install --no-install-recommends -y nmap', shell=True, stdout=DEVNULL, stderr=DEVNULL)
 
     if mode == 'scan':
         if scantype == "host":
@@ -207,7 +221,9 @@ def main(mode,scantype, outfile,dockerfile,composefile):
             scanComposeFile(composefile)
             finish(scanId)
         if scantype == "container":
-            print("container")    
+            print("container")
+            container_scan()
+
         if not scantype:
             print(f"{Fore.RED}[ERROR] Please define scantype{Style.RESET_ALL}")
 

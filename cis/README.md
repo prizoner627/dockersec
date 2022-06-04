@@ -17,6 +17,8 @@ An in-depth paragraph about your project and overview of use.
 
 - git clone https://github.com/prizoner627/dockersec.git
 - pip install -r requirements.txt
+- setup nmap
+- set permissions
 
 ### Executing program
 

@@ -385,6 +385,19 @@
                 "conf": "10",
                 "cpe": "cpe:/a:nodejs:node.js"
             }
+        },
+        {
+            "port": 8000,
+            "details": {
+                "state": "open",
+                "reason": "syn-ack",
+                "name": "http",
+                "product": "Gunicorn",
+                "version": "20.0.0",
+                "extrainfo": "",
+                "conf": "10",
+                "cpe": "cpe:/a:gunicorn:gunicorn:20.0.0"
+            }
         }
     ],
     "dockerfile": {
@@ -402,7 +415,7 @@
         ]
     },
     "info": {
-        "scanId": "41331b77-2703-4e6c-8978-4dbad144332f",
+        "scanId": "4c6b458f-812f-4235-859a-dd29c68ee3dc",
         "info": "Distributor ID:\tUbuntu\nDescription:\tUbuntu 20.04.4 LTS\nRelease:\t20.04\nCodename:\tfocal\n"
     }
 }
