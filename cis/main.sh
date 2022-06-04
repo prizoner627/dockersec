@@ -9,8 +9,6 @@
 . ./tests/2_docker_daemon_configuration.sh
 . ./tests/3_docker_daemon_configuration_files.sh
 
-yell_info
-
 # Warn if not root
 if [ "$(id -u)" != "0" ]; then
   warn "$(yell 'Some tests might require root to run')\n"

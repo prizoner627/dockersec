@@ -5,7 +5,7 @@ bldgrn='\033[1;32m' # Bold Green
 bldblu='\033[1;34m' # Bold Blue
 bldylw='\033[1;33m' # Bold Yellow
 txtrst='\033[0m'
-logger="output.log"
+logger="results/output.log"
 
 if [ -n "$nocolor" ] && [ "$nocolor" = "nocolor" ]; then
   bldred=''
@@ -103,11 +103,11 @@ yell () {
 }
 
 sjson () {
-  printf "[" | tee -a "$logger.json" 2>/dev/null 1>&2
+  printf "{\"cis\": [" | tee -a "$logger.json" 2>/dev/null 1>&2
 }
 
 ejson () {
-  printf "]" | tee -a "$logger.json" 2>/dev/null 1>&2
+  printf "]}" | tee -a "$logger.json" 2>/dev/null 1>&2
 }
 
 beginjson () {

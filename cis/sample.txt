@@ -6,177 +6,93 @@
                     "CVE_data_version": "4.0",
                     "nodes": [
                         {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "cpe_match": [
-                                        {
-                                            "cpe23Uri": "cpe:2.3:a:suse:cups:*:*:*:*:*:*:*:*",
-                                            "cpe_name": [],
-                                            "versionEndExcluding": "1.3.9",
-                                            "vulnerable": true
-                                        }
-                                    ],
-                                    "operator": "OR"
-                                },
-                                {
-                                    "children": [],
-                                    "cpe_match": [
-                                        {
-                                            "cpe23Uri": "cpe:2.3:o:suse:linux_enterprise_server:11:sp4:*:*:ltss:*:*:*",
-                                            "cpe_name": [],
-                                            "vulnerable": false
-                                        }
-                                    ],
-                                    "operator": "OR"
-                                }
-                            ],
-                            "cpe_match": [],
-                            "operator": "AND"
-                        },
-                        {
                             "children": [],
                             "cpe_match": [
                                 {
-                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*",
+                                    "cpe23Uri": "cpe:2.3:a:openjsf:express:4.1.0:*:*:*:*:*:*:*",
                                     "cpe_name": [],
                                     "vulnerable": true
                                 },
                                 {
-                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*",
+                                    "cpe23Uri": "cpe:2.3:a:openjsf:express:4.0.0:*:*:*:*:*:*:*",
                                     "cpe_name": [],
                                     "vulnerable": true
                                 },
                                 {
-                                    "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*",
+                                    "cpe23Uri": "cpe:2.3:a:openjsf:express:4.1.2:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:openjsf:express:4.1.1:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:openjsf:express:*:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "versionEndIncluding": "3.10.5",
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:openjsf:express:4.4.1:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:openjsf:express:4.4.0:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:openjsf:express:4.4.3:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:openjsf:express:4.4.2:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:openjsf:express:4.3.0:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:openjsf:express:4.4.5:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:openjsf:express:4.2.0:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:openjsf:express:4.3.1:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:openjsf:express:4.3.2:*:*:*:*:*:*:*",
+                                    "cpe_name": [],
+                                    "vulnerable": true
+                                },
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:openjsf:express:4.4.4:*:*:*:*:*:*:*",
                                     "cpe_name": [],
                                     "vulnerable": true
                                 }
                             ],
                             "operator": "OR"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "cpe_match": [
-                                        {
-                                            "cpe23Uri": "cpe:2.3:a:suse:cups:*:*:*:*:*:*:*:*",
-                                            "cpe_name": [],
-                                            "versionEndExcluding": "2.2.7",
-                                            "vulnerable": true
-                                        }
-                                    ],
-                                    "operator": "OR"
-                                },
-                                {
-                                    "children": [],
-                                    "cpe_match": [
-                                        {
-                                            "cpe23Uri": "cpe:2.3:a:suse:manager_server:4.0:*:*:*:*:*:*:*",
-                                            "cpe_name": [],
-                                            "vulnerable": false
-                                        }
-                                    ],
-                                    "operator": "OR"
-                                }
-                            ],
-                            "cpe_match": [],
-                            "operator": "AND"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "cpe_match": [
-                                        {
-                                            "cpe23Uri": "cpe:2.3:a:suse:cups:*:*:*:*:*:*:*:*",
-                                            "cpe_name": [],
-                                            "versionEndExcluding": "1.7.5",
-                                            "vulnerable": true
-                                        }
-                                    ],
-                                    "operator": "OR"
-                                },
-                                {
-                                    "children": [],
-                                    "cpe_match": [
-                                        {
-                                            "cpe23Uri": "cpe:2.3:a:suse:openstack_cloud_crowbar:9.0:*:*:*:*:*:*:*",
-                                            "cpe_name": [],
-                                            "vulnerable": false
-                                        }
-                                    ],
-                                    "operator": "OR"
-                                }
-                            ],
-                            "cpe_match": [],
-                            "operator": "AND"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "cpe_match": [
-                                        {
-                                            "cpe23Uri": "cpe:2.3:a:suse:cups:*:*:*:*:*:*:*:*",
-                                            "cpe_name": [],
-                                            "versionEndExcluding": "2.2.7",
-                                            "vulnerable": true
-                                        }
-                                    ],
-                                    "operator": "OR"
-                                },
-                                {
-                                    "children": [],
-                                    "cpe_match": [
-                                        {
-                                            "cpe23Uri": "cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*",
-                                            "cpe_name": [],
-                                            "vulnerable": false
-                                        }
-                                    ],
-                                    "operator": "OR"
-                                }
-                            ],
-                            "cpe_match": [],
-                            "operator": "AND"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [],
-                                    "cpe_match": [
-                                        {
-                                            "cpe23Uri": "cpe:2.3:a:suse:cups:*:*:*:*:*:*:*:*",
-                                            "cpe_name": [],
-                                            "versionEndIncluding": "2.3.3op2-2.1",
-                                            "vulnerable": true
-                                        }
-                                    ],
-                                    "operator": "OR"
-                                },
-                                {
-                                    "children": [],
-                                    "cpe_match": [
-                                        {
-                                            "cpe23Uri": "cpe:2.3:a:opensuse:factory:-:*:*:*:*:*:*:*",
-                                            "cpe_name": [],
-                                            "vulnerable": false
-                                        }
-                                    ],
-                                    "operator": "OR"
-                                }
-                            ],
-                            "cpe_match": [],
-                            "operator": "AND"
                         }
                     ]
                 },
                 "cve": {
                     "CVE_data_meta": {
-                        "ASSIGNER": "security@suse.com",
-                        "ID": "CVE-2021-25317"
+                        "ASSIGNER": "cve@mitre.org",
+                        "ID": "CVE-2014-6393"
                     },
                     "data_format": "MITRE",
                     "data_type": "CVE",
@@ -185,7 +101,7 @@
                         "description_data": [
                             {
                                 "lang": "en",
-                                "value": "A Incorrect Default Permissions vulnerability in the packaging of cups of SUSE Linux Enterprise Server 11-SP4-LTSS, SUSE Manager Server 4.0, SUSE OpenStack Cloud Crowbar 9; openSUSE Leap 15.2, Factory allows local attackers with control of the lp users to create files as root with 0644 permissions without the ability to set the content. This issue affects: SUSE Linux Enterprise Server 11-SP4-LTSS cups versions prior to 1.3.9. SUSE Manager Server 4.0 cups versions prior to 2.2.7. SUSE OpenStack Cloud Crowbar 9 cups versions prior to 1.7.5. openSUSE Leap 15.2 cups versions prior to 2.2.7. openSUSE Factory cups version 2.3.3op2-2.1 and prior versions."
+                                "value": "The Express web framework before 3.11 and 4.x before 4.5 for Node.js does not provide a charset field in HTTP Content-Type headers in 400 level responses, which might allow remote attackers to conduct cross-site scripting (XSS) attacks via characters in a non-standard encoding."
                             }
                         ]
                     },
@@ -195,7 +111,7 @@
                                 "description": [
                                     {
                                         "lang": "en",
-                                        "value": "CWE-276"
+                                        "value": "CWE-79"
                                     }
                                 ]
                             }
@@ -204,203 +120,22 @@
                     "references": {
                         "reference_data": [
                             {
-                                "name": "https://bugzilla.suse.com/show_bug.cgi?id=1184161",
+                                "name": "https://nodesecurity.io/advisories/express-no-charset-in-content-type-header",
+                                "refsource": "CONFIRM",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://nodesecurity.io/advisories/express-no-charset-in-content-type-header"
+                            },
+                            {
+                                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1203190",
                                 "refsource": "CONFIRM",
                                 "tags": [
                                     "Issue Tracking",
-                                    "Vendor Advisory"
+                                    "Third Party Advisory",
+                                    "VDB Entry"
                                 ],
-                                "url": "https://bugzilla.suse.com/show_bug.cgi?id=1184161"
-                            },
-                            {
-                                "name": "FEDORA-2021-dc578ce534",
-                                "refsource": "FEDORA",
-                                "tags": [
-                                    "Mailing List",
-                                    "Third Party Advisory"
-                                ],
-                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/H74BP746O5NNVCBUTLLZYAFBPESFVECV/"
-                            },
-                            {
-                                "name": "FEDORA-2021-7b698513d5",
-                                "refsource": "FEDORA",
-                                "tags": [
-                                    "Mailing List",
-                                    "Third Party Advisory"
-                                ],
-                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/S37IDQGHTORQ3Z6VRDQIGBYVOI27YG47/"
-                            },
-                            {
-                                "name": "FEDORA-2021-be95e017e7",
-                                "refsource": "FEDORA",
-                                "tags": [
-                                    "Mailing List",
-                                    "Third Party Advisory"
-                                ],
-                                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GWPGZLT3U776Q5YPPSA6LGFWWBDWBVH3/"
-                            }
-                        ]
-                    }
-                },
-                "impact": {
-                    "baseMetricV2": {
-                        "acInsufInfo": false,
-                        "cvssV2": {
-                            "accessComplexity": "LOW",
-                            "accessVector": "LOCAL",
-                            "authentication": "NONE",
-                            "availabilityImpact": "NONE",
-                            "baseScore": 2.1,
-                            "confidentialityImpact": "NONE",
-                            "integrityImpact": "PARTIAL",
-                            "vectorString": "AV:L/AC:L/Au:N/C:N/I:P/A:N",
-                            "version": "2.0"
-                        },
-                        "exploitabilityScore": 3.9,
-                        "impactScore": 2.9,
-                        "obtainAllPrivilege": false,
-                        "obtainOtherPrivilege": false,
-                        "obtainUserPrivilege": false,
-                        "severity": "LOW",
-                        "userInteractionRequired": false
-                    },
-                    "baseMetricV3": {
-                        "cvssV3": {
-                            "attackComplexity": "LOW",
-                            "attackVector": "LOCAL",
-                            "availabilityImpact": "NONE",
-                            "baseScore": 3.3,
-                            "baseSeverity": "LOW",
-                            "confidentialityImpact": "NONE",
-                            "integrityImpact": "LOW",
-                            "privilegesRequired": "LOW",
-                            "scope": "UNCHANGED",
-                            "userInteraction": "NONE",
-                            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
-                            "version": "3.1"
-                        },
-                        "exploitabilityScore": 1.8,
-                        "impactScore": 1.4
-                    }
-                },
-                "lastModifiedDate": "2021-05-27T16:37Z",
-                "publishedDate": "2021-05-05T10:15Z"
-            },
-            {
-                "configurations": {
-                    "CVE_data_version": "4.0",
-                    "nodes": [
-                        {
-                            "children": [],
-                            "cpe_match": [
-                                {
-                                    "cpe23Uri": "cpe:2.3:a:cups-pk-helper_project:cups-pk-helper:*:*:*:*:*:*:*:*",
-                                    "cpe_name": [],
-                                    "versionEndIncluding": "0.2.2",
-                                    "vulnerable": true
-                                },
-                                {
-                                    "cpe23Uri": "cpe:2.3:a:cups-pk-helper_project:cups-pk-helper:0.2.1:*:*:*:*:*:*:*",
-                                    "cpe_name": [],
-                                    "vulnerable": true
-                                },
-                                {
-                                    "cpe23Uri": "cpe:2.3:a:cups-pk-helper_project:cups-pk-helper:0.0.3:*:*:*:*:*:*:*",
-                                    "cpe_name": [],
-                                    "vulnerable": true
-                                },
-                                {
-                                    "cpe23Uri": "cpe:2.3:a:cups-pk-helper_project:cups-pk-helper:0.0.2:*:*:*:*:*:*:*",
-                                    "cpe_name": [],
-                                    "vulnerable": true
-                                },
-                                {
-                                    "cpe23Uri": "cpe:2.3:a:cups-pk-helper_project:cups-pk-helper:0.1.2:*:*:*:*:*:*:*",
-                                    "cpe_name": [],
-                                    "vulnerable": true
-                                },
-                                {
-                                    "cpe23Uri": "cpe:2.3:a:cups-pk-helper_project:cups-pk-helper:0.1.1:*:*:*:*:*:*:*",
-                                    "cpe_name": [],
-                                    "vulnerable": true
-                                },
-                                {
-                                    "cpe23Uri": "cpe:2.3:a:cups-pk-helper_project:cups-pk-helper:0.2.0:*:*:*:*:*:*:*",
-                                    "cpe_name": [],
-                                    "vulnerable": true
-                                },
-                                {
-                                    "cpe23Uri": "cpe:2.3:a:cups-pk-helper_project:cups-pk-helper:0.1.3:*:*:*:*:*:*:*",
-                                    "cpe_name": [],
-                                    "vulnerable": true
-                                },
-                                {
-                                    "cpe23Uri": "cpe:2.3:a:cups-pk-helper_project:cups-pk-helper:0.0.1:*:*:*:*:*:*:*",
-                                    "cpe_name": [],
-                                    "vulnerable": true
-                                },
-                                {
-                                    "cpe23Uri": "cpe:2.3:a:cups-pk-helper_project:cups-pk-helper:0.1.0:*:*:*:*:*:*:*",
-                                    "cpe_name": [],
-                                    "vulnerable": true
-                                },
-                                {
-                                    "cpe23Uri": "cpe:2.3:a:cups-pk-helper_project:cups-pk-helper:0.0.4:*:*:*:*:*:*:*",
-                                    "cpe_name": [],
-                                    "vulnerable": true
-                                }
-                            ],
-                            "operator": "OR"
-                        }
-                    ]
-                },
-                "cve": {
-                    "CVE_data_meta": {
-                        "ASSIGNER": "secalert@redhat.com",
-                        "ID": "CVE-2012-4510"
-                    },
-                    "data_format": "MITRE",
-                    "data_type": "CVE",
-                    "data_version": "4.0",
-                    "description": {
-                        "description_data": [
-                            {
-                                "lang": "en",
-                                "value": "cups-pk-helper before 0.2.3 does not properly wrap the (1) cupsGetFile and (2) cupsPutFile function calls, which allows user-assisted remote attackers to read or overwrite sensitive files using CUPS resources."
-                            }
-                        ]
-                    },
-                    "problemtype": {
-                        "problemtype_data": [
-                            {
-                                "description": [
-                                    {
-                                        "lang": "en",
-                                        "value": "CWE-264"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    "references": {
-                        "reference_data": [
-                            {
-                                "name": "[oss-security] 20121012 Security flaw in cups-pk-helper (CVE-2012-4510)",
-                                "refsource": "MLIST",
-                                "tags": [],
-                                "url": "http://www.openwall.com/lists/oss-security/2012/10/12/2"
-                            },
-                            {
-                                "name": "DSA-2562",
-                                "refsource": "DEBIAN",
-                                "tags": [],
-                                "url": "http://www.debian.org/security/2012/dsa-2562"
-                            },
-                            {
-                                "name": "MDVSA-2013:069",
-                                "refsource": "MANDRIVA",
-                                "tags": [],
-                                "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2013:069"
+                                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1203190"
                             }
                         ]
                     }
@@ -412,27 +147,147 @@
                             "accessVector": "NETWORK",
                             "authentication": "NONE",
                             "availabilityImpact": "NONE",
-                            "baseScore": 5.8,
-                            "confidentialityImpact": "PARTIAL",
+                            "baseScore": 4.3,
+                            "confidentialityImpact": "NONE",
                             "integrityImpact": "PARTIAL",
-                            "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:N",
+                            "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
                             "version": "2.0"
                         },
                         "exploitabilityScore": 8.6,
-                        "impactScore": 4.9,
+                        "impactScore": 2.9,
                         "obtainAllPrivilege": false,
                         "obtainOtherPrivilege": false,
                         "obtainUserPrivilege": false,
                         "severity": "MEDIUM",
                         "userInteractionRequired": true
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "LOW",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 6.1,
+                            "baseSeverity": "MEDIUM",
+                            "confidentialityImpact": "LOW",
+                            "integrityImpact": "LOW",
+                            "privilegesRequired": "NONE",
+                            "scope": "CHANGED",
+                            "userInteraction": "REQUIRED",
+                            "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+                            "version": "3.0"
+                        },
+                        "exploitabilityScore": 2.8,
+                        "impactScore": 2.7
                     }
                 },
-                "lastModifiedDate": "2013-12-05T05:17Z",
-                "publishedDate": "2012-11-20T00:55Z"
+                "lastModifiedDate": "2021-07-30T16:36Z",
+                "publishedDate": "2017-08-09T18:29Z"
+            },
+            {
+                "configurations": {
+                    "CVE_data_version": "4.0",
+                    "nodes": [
+                        {
+                            "children": [],
+                            "cpe_match": [
+                                {
+                                    "cpe23Uri": "cpe:2.3:a:negotiator_project:negotiator:*:*:*:*:*:node.js:*:*",
+                                    "cpe_name": [],
+                                    "versionEndIncluding": "0.6.0",
+                                    "vulnerable": true
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ]
+                },
+                "cve": {
+                    "CVE_data_meta": {
+                        "ASSIGNER": "cve-assignments@hackerone.com",
+                        "ID": "CVE-2016-10539"
+                    },
+                    "data_format": "MITRE",
+                    "data_type": "CVE",
+                    "data_version": "4.0",
+                    "description": {
+                        "description_data": [
+                            {
+                                "lang": "en",
+                                "value": "negotiator is an HTTP content negotiator for Node.js and is used by many modules and frameworks including Express and Koa. The header for \"Accept-Language\", when parsed by negotiator 0.6.0 and earlier is vulnerable to Regular Expression Denial of Service via a specially crafted string."
+                            }
+                        ]
+                    },
+                    "problemtype": {
+                        "problemtype_data": [
+                            {
+                                "description": [
+                                    {
+                                        "lang": "en",
+                                        "value": "CWE-20"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "references": {
+                        "reference_data": [
+                            {
+                                "name": "https://nodesecurity.io/advisories/106",
+                                "refsource": "MISC",
+                                "tags": [
+                                    "Third Party Advisory"
+                                ],
+                                "url": "https://nodesecurity.io/advisories/106"
+                            }
+                        ]
+                    }
+                },
+                "impact": {
+                    "baseMetricV2": {
+                        "cvssV2": {
+                            "accessComplexity": "LOW",
+                            "accessVector": "NETWORK",
+                            "authentication": "NONE",
+                            "availabilityImpact": "PARTIAL",
+                            "baseScore": 5.0,
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "NONE",
+                            "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+                            "version": "2.0"
+                        },
+                        "exploitabilityScore": 10.0,
+                        "impactScore": 2.9,
+                        "obtainAllPrivilege": false,
+                        "obtainOtherPrivilege": false,
+                        "obtainUserPrivilege": false,
+                        "severity": "MEDIUM",
+                        "userInteractionRequired": false
+                    },
+                    "baseMetricV3": {
+                        "cvssV3": {
+                            "attackComplexity": "LOW",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "HIGH",
+                            "baseScore": 7.5,
+                            "baseSeverity": "HIGH",
+                            "confidentialityImpact": "NONE",
+                            "integrityImpact": "NONE",
+                            "privilegesRequired": "NONE",
+                            "scope": "UNCHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                            "version": "3.0"
+                        },
+                        "exploitabilityScore": 3.9,
+                        "impactScore": 3.6
+                    }
+                },
+                "lastModifiedDate": "2019-10-09T23:16Z",
+                "publishedDate": "2018-05-31T20:29Z"
             }
         ],
         "CVE_data_format": "MITRE",
-        "CVE_data_timestamp": "2022-05-03T07:52Z",
+        "CVE_data_timestamp": "2022-06-03T19:49Z",
         "CVE_data_type": "CVE",
         "CVE_data_version": "4.0"
     },
