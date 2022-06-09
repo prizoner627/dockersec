@@ -181,13 +181,12 @@ def finish(scanId):
         else:
             print(f"{Fore.YELLOW}[DEBUG] Something went wrong, please try again{Style.RESET_ALL}")
 
-def container_scan(scanId):
+def container_scan(scanid):
     print(f"{Fore.GREEN}\n# --------------------------------------------------------------------------------------------{Style.RESET_ALL}")
     print(f"{Fore.GREEN}# Starting Container Scan{Style.RESET_ALL}")
     print(f"{Fore.GREEN}# Checks for container security.{Style.RESET_ALL}")
     print(f"{Fore.GREEN}# --------------------------------------------------------------------------------------------{Style.RESET_ALL}")
     
-    print(scanId)
     rc = call("./container.sh", shell=True)
 
     nm = nmap.PortScanner()
@@ -221,7 +220,7 @@ def container_scan(scanId):
         data = json.loads(logfile.read())
         # print(data)
 
-        url = 'http://192.168.82.241:5000/container-results'
+        url = 'http://192.168.82.241:5000/container-results?id=' + scanid
         print(f"{Fore.YELLOW}[DEBUG] Sending results to the server {url}{Style.RESET_ALL}")
 
         r = requests.post(url, json=data)
@@ -234,12 +233,12 @@ def container_scan(scanId):
 @click.command()							
 @click.argument('mode', type=str)
 @click.option('--scantype', type=str, help='Please mention scan type (host/container)')
-@click.option('--scanId', type=str, help='Please mention scan id')
+@click.option('--scanid', type=str, help='Please mention scan id')
 @click.option('--outfile', type=str, default="sample.txt", help='Output file name')
 @click.option('--dockerfile', type=str, default="./samples/Dockerfile", help='Dockerfile location')
 @click.option('--composefile', type=str, default="./samples/docker-compose3.yml", help='Docker-compose location')
 
-def main(mode,scantype, outfile,dockerfile,composefile):
+def main(mode,scantype, outfile,dockerfile,composefile,scanid):
     print(f"{Fore.GREEN}\n# DockySec v1.0 \n{Style.RESET_ALL}")
 
     if which("nmap") is None:
@@ -254,10 +253,11 @@ def main(mode,scantype, outfile,dockerfile,composefile):
 
     if mode == 'scan':
         if scantype == "host":
-            scanId = uuid.uuid4()
-            print(f"{Fore.RED}[IMPORTANT] Please remember this scan id to run container specific scans {scanId}{Style.RESET_ALL}")
-            
+            sid = uuid.uuid4()
+
+            print(f"{Fore.RED}[IMPORTANT] Please remember this scan id to run container specific scans {sid}{Style.RESET_ALL}")
             print(f"{Fore.YELLOW}[DEBUG] Cleaning previous scans \n{Style.RESET_ALL}")
+
             if os.path.exists("./results/output.log.json"):
                 os.remove("results/output.log.json")
             if os.path.exists("results/output.log"):
@@ -267,20 +267,22 @@ def main(mode,scantype, outfile,dockerfile,composefile):
             host_scan()
             scanDockerFile(dockerfile)
             scanComposeFile(composefile)
-            finish(scanId)
+            finish(sid)
             
         if scantype == "container":
-            if not scanId:
+            if not scanid:
                 print(f"{Fore.RED}[ERROR] Please define scanId{Style.RESET_ALL}")
                 exit() 
             else:    
-                print(f"{Fore.YELLOW}[DEBUG] Cleaning previous scans \n{Style.RESET_ALL}")
+                print(f"{Fore.YELLOW}[DEBUG] Cleaning previous scans {Style.RESET_ALL}")
+                print(f"{Fore.YELLOW}[DEBUG] Using Scan ID {scanid} {Style.RESET_ALL}")
+
                 if os.path.exists("./results/output.log.json"):
                     os.remove("results/output.log.json")
                 if os.path.exists("results/output.log"):
                     os.remove("results/output.log")
 
-                container_scan(scanId)
+                container_scan(scanid)
 
         if not scantype:
             print(f"{Fore.RED}[ERROR] Please define scantype{Style.RESET_ALL}")
