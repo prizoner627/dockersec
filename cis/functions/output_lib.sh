@@ -102,6 +102,10 @@ yell () {
   printf "%b\n" "${bldylw}$1${txtrst}\n"
 }
 
+scjson () {
+  printf "{\"container\": [" | tee -a "$logger.json" 2>/dev/null 1>&2
+}
+
 sjson () {
   printf "{\"cis\": [" | tee -a "$logger.json" 2>/dev/null 1>&2
 }

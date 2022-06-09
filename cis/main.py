@@ -187,7 +187,48 @@ def container_scan():
     print(f"{Fore.GREEN}# Checks for container security.{Style.RESET_ALL}")
     print(f"{Fore.GREEN}# --------------------------------------------------------------------------------------------{Style.RESET_ALL}")
     
+    rc = call("./container.sh", shell=True)
 
+    nm = nmap.PortScanner()
+    nm.scan('127.0.0.1')
+
+    results = []
+
+    for port in nm['127.0.0.1']['tcp'].items():
+        result = {
+            "port" : port[0],
+            "details": port[1],
+        }
+
+        results.append(result)
+    
+    # print(results)
+    print(f"{Fore.YELLOW}[DEBUG] Found {len(results)} open ports{Style.RESET_ALL}")
+
+    logdata = {}
+
+    with open("results/output.log.json","r") as logfile:
+        logdata = json.load(logfile)
+
+    logdata["containerscan"] = results
+
+    with open("results/output.log.json","w") as logfile:
+        print(f"{Fore.YELLOW}[DEBUG] Writing result to the log file{Style.RESET_ALL}")
+        json.dump(logdata, logfile, ensure_ascii=False, indent=4)
+
+        with open("results/output.log.json", "r") as logfile:
+            data = json.loads(logfile.read())
+            # print(data)
+            
+            url = 'http://192.168.82.241:5000/container-results'
+            print(f"{Fore.YELLOW}[DEBUG] Sending results to the server {url}{Style.RESET_ALL}")
+
+            r = requests.post(url, json=data)
+
+            if(r.status_code == 200):
+                print(f"{Fore.YELLOW}[DEBUG] Successfully sent{Style.RESET_ALL}")
+            else:
+                print(f"{Fore.YELLOW}[DEBUG] Something went wrong, please try again{Style.RESET_ALL}")    
 
 @click.command()							
 @click.argument('mode', type=str)
@@ -201,8 +242,9 @@ def main(mode,scantype, outfile,dockerfile,composefile):
 
     if which("nmap") is None:
         print(f"{Fore.RED}[IMPORTANT] Nmap is not installed{Style.RESET_ALL}")
-        print(f"{Fore.YELLOW}[DEBUG] Installing nmap \n{Style.RESET_ALL}")
-        call('sudo apt install --no-install-recommends -y nmap', shell=True, stdout=DEVNULL, stderr=DEVNULL)
+        exit()
+        # print(f"{Fore.YELLOW}[DEBUG] Installing nmap \n{Style.RESET_ALL}")
+        # call('sudo apt install --no-install-recommends -y nmap', shell=True, stdout=DEVNULL, stderr=DEVNULL)
 
     if mode == 'scan':
         if scantype == "host":
@@ -220,6 +262,7 @@ def main(mode,scantype, outfile,dockerfile,composefile):
             scanDockerFile(dockerfile)
             scanComposeFile(composefile)
             finish(scanId)
+            
         if scantype == "container":
             print("container")
             container_scan()
