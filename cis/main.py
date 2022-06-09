@@ -181,12 +181,13 @@ def finish(scanId):
         else:
             print(f"{Fore.YELLOW}[DEBUG] Something went wrong, please try again{Style.RESET_ALL}")
 
-def container_scan():
+def container_scan(scanId):
     print(f"{Fore.GREEN}\n# --------------------------------------------------------------------------------------------{Style.RESET_ALL}")
     print(f"{Fore.GREEN}# Starting Container Scan{Style.RESET_ALL}")
     print(f"{Fore.GREEN}# Checks for container security.{Style.RESET_ALL}")
     print(f"{Fore.GREEN}# --------------------------------------------------------------------------------------------{Style.RESET_ALL}")
     
+    print(scanId)
     rc = call("./container.sh", shell=True)
 
     nm = nmap.PortScanner()
@@ -216,23 +217,24 @@ def container_scan():
         print(f"{Fore.YELLOW}[DEBUG] Writing result to the log file{Style.RESET_ALL}")
         json.dump(logdata, logfile, ensure_ascii=False, indent=4)
 
-        with open("results/output.log.json", "r") as logfile:
-            data = json.loads(logfile.read())
-            # print(data)
-            
-            url = 'http://192.168.82.241:5000/container-results'
-            print(f"{Fore.YELLOW}[DEBUG] Sending results to the server {url}{Style.RESET_ALL}")
+    with open("results/output.log.json", "r") as logfile:
+        data = json.loads(logfile.read())
+        # print(data)
 
-            r = requests.post(url, json=data)
+        url = 'http://192.168.82.241:5000/container-results'
+        print(f"{Fore.YELLOW}[DEBUG] Sending results to the server {url}{Style.RESET_ALL}")
 
-            if(r.status_code == 200):
-                print(f"{Fore.YELLOW}[DEBUG] Successfully sent{Style.RESET_ALL}")
-            else:
-                print(f"{Fore.YELLOW}[DEBUG] Something went wrong, please try again{Style.RESET_ALL}")    
+        r = requests.post(url, json=data)
+
+        if(r.status_code == 200):
+            print(f"{Fore.YELLOW}[DEBUG] Successfully sent{Style.RESET_ALL}")
+        else:
+            print(f"{Fore.YELLOW}[DEBUG] Something went wrong, please try again{Style.RESET_ALL}")    
 
 @click.command()							
 @click.argument('mode', type=str)
 @click.option('--scantype', type=str, help='Please mention scan type (host/container)')
+@click.option('--scanId', type=str, help='Please mention scan id')
 @click.option('--outfile', type=str, default="sample.txt", help='Output file name')
 @click.option('--dockerfile', type=str, default="./samples/Dockerfile", help='Dockerfile location')
 @click.option('--composefile', type=str, default="./samples/docker-compose3.yml", help='Docker-compose location')
@@ -245,6 +247,10 @@ def main(mode,scantype, outfile,dockerfile,composefile):
         exit()
         # print(f"{Fore.YELLOW}[DEBUG] Installing nmap \n{Style.RESET_ALL}")
         # call('sudo apt install --no-install-recommends -y nmap', shell=True, stdout=DEVNULL, stderr=DEVNULL)
+
+
+    #set permissions on results folder
+    subprocess.call(['chmod', '+xrw', 'results/'])
 
     if mode == 'scan':
         if scantype == "host":
@@ -264,8 +270,17 @@ def main(mode,scantype, outfile,dockerfile,composefile):
             finish(scanId)
             
         if scantype == "container":
-            print("container")
-            container_scan()
+            if not scanId:
+                print(f"{Fore.RED}[ERROR] Please define scanId{Style.RESET_ALL}")
+                exit() 
+            else:    
+                print(f"{Fore.YELLOW}[DEBUG] Cleaning previous scans \n{Style.RESET_ALL}")
+                if os.path.exists("./results/output.log.json"):
+                    os.remove("results/output.log.json")
+                if os.path.exists("results/output.log"):
+                    os.remove("results/output.log")
+
+                container_scan(scanId)
 
         if not scantype:
             print(f"{Fore.RED}[ERROR] Please define scantype{Style.RESET_ALL}")
