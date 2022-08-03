@@ -12,6 +12,9 @@ from dockerfile_parse import DockerfileParser
 import subprocess
 from colorama import Fore, Style
 import uuid
+from http.server import BaseHTTPRequestHandler, HTTPServer
+from requests import get
+import app
 
 def cis_check():
     #cleaning files
@@ -35,13 +38,14 @@ def host_scan():
 
     results = []
 
-    for port in nm['127.0.0.1']['tcp'].items():
-        result = {
-            "port" : port[0],
-            "details": port[1],
-        }
+    if "tcp" in nm['127.0.0.1']:
+        for port in nm['127.0.0.1']['tcp'].items():
+            result = {
+                "port" : port[0],
+                "details": port[1],
+            }
 
-        results.append(result)
+            results.append(result)
     
     # print(results)
     print(f"{Fore.YELLOW}[DEBUG] Found {len(results)} open ports{Style.RESET_ALL}")
@@ -65,7 +69,9 @@ def scanDockerFile(dockerfile):
     print(f"{Fore.YELLOW}[DEBUG] Scanning DockerFile{Style.RESET_ALL}")
     
     if os.path.exists(dockerfile):
-        print(f"{Fore.YELLOW}[DEBUG] DockerFile found at {dockerfile}{Style.RESET_ALL}")
+        path = os.path.abspath(dockerfile)
+
+        print(f"{Fore.YELLOW}[DEBUG] DockerFile found at {path}{Style.RESET_ALL}")
         dfp = DockerfileParser()
 
         #open file for reading
@@ -77,7 +83,11 @@ def scanDockerFile(dockerfile):
 
         if dfp.baseimage is not None:
             baseimage = dfp.baseimage.split(":")
-            print(f"{Fore.YELLOW}[DEBUG] Found baseimage {baseimage}{Style.RESET_ALL}")
+
+            image = baseimage[0].strip()
+            version = baseimage[1].strip()
+
+            print(f"{Fore.YELLOW}[DEBUG] Found baseimage {image} : {version}{Style.RESET_ALL}")
 
             logdata = {}
 
@@ -85,8 +95,11 @@ def scanDockerFile(dockerfile):
                 logdata = json.load(logfile)
 
             d = {
+                "path": path,
                 "location": dockerfile,
-                "baseimage": baseimage
+                "baseimage": baseimage,
+                "image": image,
+                "version":version
             }
 
             logdata["dockerfile"] = d
@@ -107,7 +120,9 @@ def scanComposeFile(composefile):
     print(f"{Fore.YELLOW}[DEBUG] Scanning Composefile{Style.RESET_ALL}")
     
     if os.path.exists(composefile):
-        print(f"{Fore.YELLOW}[DEBUG] Composefile found at {composefile}{Style.RESET_ALL}")
+        path = os.path.abspath(composefile)
+
+        print(f"{Fore.YELLOW}[DEBUG] Composefile found at {path}{Style.RESET_ALL}")
         dfp = DockerfileParser(False)
 
         # open file for reading
@@ -121,7 +136,11 @@ def scanComposeFile(composefile):
                 if line['instruction'] == 'IMAGE:':
                     # print(line['content'].split(":"))
                     baseImage = line['content'].split(":")[1:3] 
-                    print(f"{Fore.YELLOW}[DEBUG] Found baseimage {baseImage}{Style.RESET_ALL}")
+
+                    image = baseImage[0].strip()
+                    version = baseImage[1].strip()
+
+                    print(f"{Fore.YELLOW}[DEBUG] Found baseimage {image} : {version}{Style.RESET_ALL}")
 
                     logdata = {}
 
@@ -129,8 +148,11 @@ def scanComposeFile(composefile):
                         logdata = json.load(logfile)
 
                     d = {
+                        "path": path,
                         "location": composefile,
-                        "baseimage": baseImage
+                        "baseimage": baseImage,
+                        "image": image,
+                        "version":version,
                     }
 
                     logdata["composefile"] = d
@@ -152,13 +174,17 @@ def finish(scanId):
     logdata = {}
 
     info = subprocess.run(['lsb_release', '-a'], capture_output=True, text=True).stdout
+    
+    ip = get('https://api.ipify.org').content.decode('utf8')
+    print('Public IP address is: {}'.format(ip))
 
     with open("results/output.log.json","r") as logfile:
         logdata = json.load(logfile)
 
     d = {
         "scanId": str(scanId),
-        "info": str(info)
+        "info": str(info),
+        "ip": str(ip),
     }
 
     logdata["info"] = d
@@ -171,7 +197,7 @@ def finish(scanId):
         data = json.loads(logfile.read())
         # print(data)
         
-        url = 'http://192.168.82.241:5000/host-results'
+        url = 'http://192.168.8.100:5000/host-results'
         print(f"{Fore.YELLOW}[DEBUG] Sending results to the server {url}{Style.RESET_ALL}")
 
         r = requests.post(url, json=data)
@@ -289,6 +315,45 @@ def main(mode,scantype, outfile,dockerfile,composefile,scanid):
 
     if mode == 'fix':
         print("fix")    
+
+        # app.run(host='0.0.0.0', port=5000, debug=True)
+        # hostName = "localhost"
+        # serverPort = 8080
+        # subprocess.call(['python3','-m','venv','venv'])
+        # subprocess.call(['source','venv/bin/activate'])
+        # subprocess.call(['flask','run'])
+        # os.system("python app.py")
+        subprocess.call(['flask','run'])
+        # class MyServer(BaseHTTPRequestHandler):
+        #     def do_GET(self):
+        #         self.send_response(200)
+        #         self.send_header("Content-type", "text/html")
+        #         self.end_headers()
+        #         self.wfile.write(bytes("<html><head><title>https://pythonbasics.org</title></head>", "utf-8"))
+        #         self.wfile.write(bytes("<p>Request: %s</p>" % self.path, "utf-8"))
+        #         self.wfile.write(bytes("<body>", "utf-8"))
+        #         self.wfile.write(bytes("<p>This is an example web server.</p>", "utf-8"))
+        #         self.wfile.write(bytes("</body></html>", "utf-8"))
+
+        #     def do_POST(self):
+        #         self.send_response(200)
+        #         self.send_header('Content-type','text/html')
+        #         self.end_headers()
+
+        #         message = "Hello, World! Here is a POST response"
+        #         self.wfile.write(bytes(message, "utf8"))    
+
+        # webServer = HTTPServer((hostName, serverPort), MyServer)
+        # print("Server started http://%s:%s" % (hostName, serverPort))
+
+        # try:
+        #     webServer.serve_forever()
+        # except KeyboardInterrupt:
+        #     pass
+
+        # webServer.server_close()
+        # print("Server stopped.")
+
 
 if __name__ == '__main__':
     main()

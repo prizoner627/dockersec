@@ -19,6 +19,7 @@ An in-depth paragraph about your project and overview of use.
 - pip install -r requirements.txt
 - install nmap
 - chmod -R +x /dockersec
+- apt install net-tools to use netstat
 
 ### Executing program
 
