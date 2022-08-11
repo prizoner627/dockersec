@@ -16,19 +16,21 @@ def hello():
 
         dfp = DockerfileParser()
 
+        # open dockerfile for read
         with open(content["dockerfile"]["path"], 'r+') as f1:
             data = f1.read()
             dfp.content = data
             # pprint(dfp.content)
 
-            # creating backup file
-            backup_filepath = content["dockerfile"]["path"] + "_backup"
+            # creating backup file for write 
+            backup_filepath = content["dockerfile"]["path"] + ".bak"
 
             with open(backup_filepath, 'w') as f2:
                 f2.seek(0)
                 f2.truncate() 
                 f2.write(data)
 
+            # writing data to original file
             if dfp.baseimage is not None:
                 dfp.baseimage = "vulhub/node:latest"
             f1.seek(0)

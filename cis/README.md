@@ -17,6 +17,7 @@ An in-depth paragraph about your project and overview of use.
 
 - git clone https://github.com/prizoner627/dockersec.git
 - pip install -r requirements.txt
+- sudo pip3 install flask
 - install nmap
 - chmod -R +x /dockersec
 - apt install net-tools to use netstat
