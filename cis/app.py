@@ -2,17 +2,18 @@
 from flask import Flask, request, jsonify
 from dockerfile_parse import DockerfileParser
 from colorama import Fore, Style
+from pprint import pprint
 
 app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def hello():
 
-    #  curl -X POST http://127.0.0.1:5000/ -H 'Content-Type: application/json' -d '{"dockerfile":{ "path":"/home/dush/dockersec/cis/samples/Dockerfile","version":"latest","image":"vulhub/node" }}'
+    #  curl -X POST http://127.0.0.1:5000/ -H 'Content-Type: application/json' -d '{"dockerfile":{ "fixedVersion":"latest","path":"/home/dush/dockersec/cis/samples/Dockerfile","version":"latest","image":"vulhub/node" }}'
     if request.method == 'POST':
         # modify docker file
         content = request.json
-        print(content["dockerfile"]["path"])
+        # print(content["dockerfile"]["path"])
 
         dfp = DockerfileParser()
 
@@ -32,30 +33,52 @@ def hello():
 
             # writing data to original file
             if dfp.baseimage is not None:
-                dfp.baseimage = "vulhub/node:latest"
+                dfp.baseimage = content["dockerfile"]["image"] + ":" + content["dockerfile"]["fixedVersion"]
             f1.seek(0)
             f1.truncate()    
             f1.write(dfp.content)
-            print(dfp.content)
 
         # modify composefile
-        print(content["composefile"]["path"])
-
-        with open(content["composefile"]["path"], 'r') as f:
-            data = f.read()
+        with open(content["composefile"]["path"], 'r+') as f3:
+            data = f3.read()
             dfp.content = data
             a = dfp.structure        
 
+            # creating backup file for write 
+            backup_filepath = content["composefile"]["path"] + ".bak"
+
+            with open(backup_filepath, 'w') as f4:
+                f4.seek(0)
+                f4.truncate() 
+                f4.write(data) 
+
+            # writing data to original file
+        with open(content["composefile"]["path"], 'r+') as f5:    
+            data = f5.read()
+            dfp.content = data
+            a = dfp.structure      
+            
             for line in a:
                 if line['instruction'] == 'IMAGE:':
                     # print(line['content'].split(":"))
-                    baseImage = line['content'].split(":")[1:3] 
-                    image = baseImage[0].strip()
-                    version = baseImage[1].strip()
-                    print(image,version)
-                    
-        return '<h1>Hello, World!</h1>'
+                    baseImage = line['content']   
+                    ins = baseImage.split(":")[0] + ":"
+                    image = baseImage.split(":")[1]
+                    latest = ":latest\n"
+                    new = ins + image + latest
+                    # print(new)
+                    line['content'] = new
+                    # print(line['content'])
+                    # f5.write(line['content'])
+                # f3.write(line['content'])
 
+            f5.seek(0)
+            f5.truncate() 
+
+            for line in a:
+                f5.write(line['content'])    
+
+        return '<h1>Completed !</h1>'
 
 @app.route('/about/')
 def about():
